@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Standard Edition
 ========================
 
@@ -169,3 +170,7 @@ Enjoy!
 [11]: http://symfony.com/doc/2.3/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.3/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.3/bundles/SensioGeneratorBundle/index.html
+=======
+laflechedutemps
+===============
+>>>>>>> 72dfae0e1f5d40c9aae8bd2f24a1a7678743fd0b
