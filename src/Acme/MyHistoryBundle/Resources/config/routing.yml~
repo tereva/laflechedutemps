@@ -1,0 +1,9 @@
+event_add:
+    pattern:  /event_add
+    defaults: { _controller: AcmeMyHistoryBundle:Default:add}
+event_showall:
+    pattern:  /event_showall
+    defaults: { _controller: AcmeMyHistoryBundle:Default:showall}
+event_timeline:
+    pattern:  /event_timeline
+    defaults: { _controller: AcmeMyHistoryBundle:Default:timeline}

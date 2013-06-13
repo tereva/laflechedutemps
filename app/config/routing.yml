@@ -1,0 +1,3 @@
+AcmeMyHistoryBundle:
+    resource: "@AcmeMyHistoryBundle/Resources/config/routing.yml"
+    prefix:   /mytimeline

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RECORDED EVENTS</title>
+</head>
+<body>
+<h1>RECORDED EVENTS</h1>
+{% for item in event %}
+Event {{item.id }} / {{item.title }} / {{item.start|date("d/m/Y H:i:s")}} / {{item.end|date("d/m/Y H:i:s")}} / {{item.durationEvent}} <br>
+{% endfor %}
+<a href="event_add">Add </a>
+</body>
+</html>

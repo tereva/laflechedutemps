@@ -1,0 +1,84 @@
+
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+
+
+
+	
+	<script type="text/javascript">
+	 function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+      }
+	 </script>
+
+
+
+
+
+
+<script type="text/javascript">
+ 
+   /* Déclaration des variables  */
+  var geocoder;
+  var map;
+  var markers = new Array();
+  var i = 0;
+  var addr, latitude, longitude;
+ 
+  /* Initialisation de la carte  */
+  function initialize() {
+   /* Instanciation du geocoder  */
+   geocoder = new google.maps.Geocoder();
+   var paris = new google.maps.LatLng(48.8566667, 2.3509871);
+   var myOptions = {
+    zoom: 4,
+    center: paris,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+   }
+   /* Chargement de la carte  */
+   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  }
+
+ 
+ /* Fonction chargée de géolocaliser l'adresse */ 
+ function geolocalise(){
+  
+  /* Récupération du champ "adresse" */ 
+  addr = document.getElementById('form_address').value;
+  
+  /* Tentative de géocodage */ 
+  geocoder.geocode( { 'address': addr}, function(results, status) {
+  
+  /* Si géolocalisation réussie */ 
+   if (status == google.maps.GeocoderStatus.OK) {
+   
+   /* Récupération des coordonnées */ 
+    latitude = results[0].geometry.location.lat();
+    longitude = results[0].geometry.location.lng();
+    
+	/* Insertion des coordonnées dans les input text */ 
+    document.getElementById('form_lat').value = latitude;
+    document.getElementById('form_lng').value = longitude;
+    
+	 map.setCenter(results[0].geometry.location);
+     /* Affichage du marker */
+     var marker = new google.maps.Marker({
+      map: map,
+      position: results[0].geometry.location
+     });
+   }
+
+  });
+ }
+</script>

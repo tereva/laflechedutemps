@@ -1,0 +1,12 @@
+Acme\MyHistoryBundle\Entity\Event:
+properties:
+title:
+- NotBlank: ~
+start:
+- NotBlank: ~
+- Type: \DateTime
+link:
+- NotBlank: ~
+- Type: \Url
+
+
