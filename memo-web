@@ -1,0 +1,68 @@
+
+
+SVN
+
+tvaillard@gmail.com/xb9Zs5QK8Cc2
+
+> creer l'arbo SVN (telecharge eventuellement les sources) : 
+
+svn checkout https://tereva-laflechedutemps.googlecode.com/svn/trunk/ tereva-laflechedutemps --username tvaillard@gmail.com
+
+> Ajouter un repertoire
+
+svn add repertoire
+svn commit -m "message"
+
+> Commandes diverses :
+
+svn diff (fichier)
+svn add fichier
+svn revert repertoire/fichier
+
+
+
+GIT
+
+Cas 1 : repertoire local deja existant (mise a jour local-> github)
+
+> creer .gitignore, exemple :
+/web/bundles/
+/app/bootstrap.php.cache
+/app/cache/*
+/app/config/parameters.yml
+/app/logs/*
+/build/
+/vendor/
+/bin/
+
+
+
+> git init pour intialiser
+> git add .
+> git commit -m "Commit initial"
+> git commit -a (ajout de tous les fichiers modifie)
+> git push https://github.com/tereva/laflechedutemps.git
+
+Cas 2 : repertoire local vide, a remplir (mise a jour github -> local)
+
+mkdir  repertoire
+cd repertoire
+git init
+git clone git://github.com/tereva/laflechedutemps.git
+
+
+
+SYMFONY
+
+INSTALLATION + AJOUT BUNDLE
+
+1/ php composer.phar create-project symfony/framework-standard-edition path/ 2.3.0
+2/ web/config.php
+3/ Pour ajouter un Bundle (deja ecrit) :
+	> le copier dans src/Acme
+        > l'ajouter dans app/AppKernel.php  (new Acme\MyHistoryBundle\AcmeMyHistoryBundle(),)
+	> s'assurer du routing correct (app/routing.yml) 
+
+
+
+
